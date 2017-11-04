@@ -28,7 +28,7 @@ public class Maths {
 		matrix.setIdentity();
 		
 		Matrix4f.rotate((float) Math.toRadians(camera.getRotX()), new Vector3f(1, 0, 0), matrix, matrix);
-		Matrix4f.rotate((float) Math.toRadians(camera.getRotX()), new Vector3f(0, 1, 0), matrix, matrix);
+		Matrix4f.rotate((float) Math.toRadians(camera.getRotY()), new Vector3f(0, 1, 0), matrix, matrix);
 		Matrix4f.rotate((float) Math.toRadians(camera.getRotZ()), new Vector3f(0, 0, 1), matrix, matrix);
 		Matrix4f.translate(new Vector3f(-camera.getPosition().x, -camera.getPosition().y, -camera.getPosition().z), matrix, matrix);
 		

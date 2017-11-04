@@ -11,7 +11,7 @@ public class Camera {
 	float rotY;
 	float rotZ;
 	
-	float speed = 0.01f;
+	float speed = 0.05f;
 	float turnSpeed = 0.2f;
 	float moveAt = 0;
 	
@@ -34,9 +34,6 @@ public class Camera {
 			moveAt = 0;
 		}
 		
-		rotY += -Mouse.getDY() * turnSpeed;
-		rotX += Mouse.getDX() * turnSpeed;
-		
 		float dx = (float) - (moveAt * Math.sin(Math.toRadians(rotY)));
 		float dy = (float) (moveAt * Math.sin(Math.toRadians(rotX)));
 		float dz = (float) (moveAt * Math.cos(Math.toRadians(rotZ)));
@@ -45,6 +42,12 @@ public class Camera {
 		position.y += dy;
 		position.z += dz;
 		
+		rotX += -Mouse.getDY() * turnSpeed;
+		rotY += Mouse.getDX() * turnSpeed;
+
+		//System.out.println(rotX); //debug camera rot
+		//System.out.println(rotY);
+
 	}
 	
 	public Vector3f getPosition() {
